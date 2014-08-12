@@ -42,31 +42,11 @@ public class Program
     }
 }
 
-public class NamingConventions : IPropertyConvention, IReferenceConvention, IIdConvention, IClassConvention, IHasManyConvention
+public class NamingConventions : IIdConvention
 {
-    public void Apply(IPropertyInstance instance)
-    {
-        instance.Property.Name.GetHashCode();
-    }
-
-    public void Apply(IManyToOneInstance instance)
-    {
-        instance.Property.Name.GetHashCode();
-    }
-
     public void Apply(IIdentityInstance instance)
     {
         instance.Property.Name.GetHashCode();
-    }
-
-    public void Apply(IClassInstance instance)
-    {
-        instance.EntityType.Name.GetHashCode();
-    }
-
-    public void Apply(IOneToManyCollectionInstance instance)
-    {
-        instance.EntityType.Name.GetHashCode();
     }
 }
 
